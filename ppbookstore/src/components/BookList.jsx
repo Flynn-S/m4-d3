@@ -1,11 +1,13 @@
 import React from "react";
 import SingleBook from "./SingleBook";
-import { Form, Row, Container } from "react-bootstrap";
+import { Form, Row, Container, Modal, Button } from "react-bootstrap";
+import CommentArea from "./CommentArea";
 
 class BookList extends React.Component {
   state = {
     books: this.props.category,
     selectedBook: null,
+    showModal: false,
   };
 
   filterBooks = (query) => {
@@ -16,13 +18,16 @@ class BookList extends React.Component {
     // const filter = this.props.
   };
 
-  // handleBookClick = (asin) => {
-  //   this.setState({ selectedBook: asin });
-  // };
+  handleBookClick = (asin) => {
+    this.setState({ selectedBook: asin, showModal: true });
+  };
+  handleModalOpen = (isOpen) => {
+    this.setState({ showModal: isOpen });
+  };
 
   render() {
     // const { books} = this.state
-    console.log();
+    console.log(this.state.selectedBook);
     return (
       <div>
         <Form.Group>
@@ -42,11 +47,16 @@ class BookList extends React.Component {
               <SingleBook
                 key={book.asin}
                 book={book}
-                // handleBookClick={this.handleBookClick}
+                handleBookClick={this.handleBookClick}
               />
             ))}
           </Row>
         </Container>
+        <CommentArea
+          selectedBook={this.state.selectedBook}
+          showModal={this.state.showModal}
+          handleModalOpen={this.handleModalOpen}
+        />
       </div>
     );
   }
