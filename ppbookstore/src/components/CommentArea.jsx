@@ -9,6 +9,8 @@ class CommentArea extends React.Component {
     isLoading: false,
     isError: false,
   };
+
+  // "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDYzNjlkNDcwNDYyZTAwMTUyMTkwMjAiLCJpYXQiOjE2MTcxMjc4OTMsImV4cCI6MTYxODMzNzQ5M30.8XfR2lYUrCQiEkE_ZvFn607RccvX-hjjwuWfVnaXQaU"
   fetchBookComments = async () => {
     try {
       let response = await fetch(
@@ -17,7 +19,7 @@ class CommentArea extends React.Component {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDYzNjlkNDcwNDYyZTAwMTUyMTkwMjAiLCJpYXQiOjE2MTcxMjc4OTMsImV4cCI6MTYxODMzNzQ5M30.8XfR2lYUrCQiEkE_ZvFn607RccvX-hjjwuWfVnaXQaU",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDYzNjlkNDcwNDYyZTAwMTUyMTkwMjAiLCJpYXQiOjE2MTc2NTc2MzUsImV4cCI6MTYxODg2NzIzNX0.fkjmA6hW-P2Yj3gJ0Qt_ZbQLjwyqZ2I4YtlwaxFOEUs",
           },
         }
       );

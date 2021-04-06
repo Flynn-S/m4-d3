@@ -33,11 +33,11 @@ class AddComment extends React.Component {
           headers: {
             "Content-Type": "application/json",
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDYzNjlkNDcwNDYyZTAwMTUyMTkwMjAiLCJpYXQiOjE2MTcxMjc4OTMsImV4cCI6MTYxODMzNzQ5M30.8XfR2lYUrCQiEkE_ZvFn607RccvX-hjjwuWfVnaXQaU",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDYzNjlkNDcwNDYyZTAwMTUyMTkwMjAiLCJpYXQiOjE2MTc2NTc2MzUsImV4cCI6MTYxODg2NzIzNX0.fkjmA6hW-P2Yj3gJ0Qt_ZbQLjwyqZ2I4YtlwaxFOEUs",
           },
         }
       );
-      if (response === 200) {
+      if (response.ok) {
         alert("Your Comment has been saved");
         this.setState({
           comment: {
